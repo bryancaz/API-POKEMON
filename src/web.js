@@ -1,3 +1,4 @@
+//CREAMOS LA CONST WEB 
 const web = onPerfEntry => {
   if (onPerfEntry && onPerfEntry instanceof Function) {
     import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
