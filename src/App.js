@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import axios from "axios";
 import React, { useEffect, useState } from 'react';
@@ -16,7 +15,7 @@ function App() {
   }
   get()
    },[]);
-  const obtenerInformacion =async (id) =>{
+  const obtInf =async (id) =>{
     console.log(id)
     const data= await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
     setPokemon(data.data)
@@ -30,7 +29,7 @@ function App() {
     
     <p> POKEMON YO TE ELIJO </p>
 
-     <ul className='fondolist'>
+     <ul className='fotolista'>
         {lista.map((lista , index) => (
    <div>   
           <li key={lista.name}>
@@ -38,7 +37,7 @@ function App() {
          
 
           </li>
-          <button onClick={() => obtenerInformacion(index+1)} className="boton">VER POKEMON SELECCIONADO</button>
+          <button onClick={() => obtInf(index+1)} className="boton">VER POKEMON SELECCIONADO</button>
           
    </div>
         ))}
@@ -46,7 +45,7 @@ function App() {
       {ocultar &&
     <div className="imagen" >
         <h1 className="">{pokemon.name}</h1>
-        <img className='imagenpok' src={pokemon.sprites.front_default} alt="pokemon" />
+        <img className='imagenpokemon' src={pokemon.sprites.front_default} alt="pokemon" />
         </div>
     }
     </div>
